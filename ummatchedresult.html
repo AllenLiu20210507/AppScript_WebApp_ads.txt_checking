@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"><!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css"><!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .main {
+            flex: 1 0 auto;
+        }
+
+        .btn {
+            margin-bottom: 15px;
+            width: 150px;
+            font-size: 8px;
+        }
+
+        footer {
+            flex: 0 0 auto;
+            background-color: ;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <h3>
+                            Unmatched Items:
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <textarea id="textarea1" rows="2" cols="20" style="width:1000px; height:400px" class="textarea">
+<?= ummatched; ?>
+</textarea>
+                        </div>
+                    </div><!-- <div class="col s12">
+       <button class="btn waves-effect waves-light" id="sendemail" style="width:600px">Send a note email to the customer</button>
+                </div> -->
+                </div>Please fill in the email address you want to sent the note:
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate"> <label for="email">Email</label>
+								  <span class="helper-text" data-error="email adress wrong" data-success="right"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s12">
+                    <button class="btn waves-effect waves-light" id="sendemail">Send email</button>
+                </div><!-- <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h6>
+                        Create a new sheet for a new account if you would like to do so
+                    </h6>
+                </div>
+                <div class="col s12"><button class="btn waves-effect waves-light" id="createWS">Create Bid sheet</button></div>
+                <div class="col s12"><button class="btn waves-effect waves-light" id="createWS">Create Budget sheet</button></div>
+            </div>
+        </div>
+    </footer> -->
+                <!--JavaScript at end of body for optimized loading-->
+                <!-- Compiled and minified JavaScript -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" type="text/javascript">
+</script> <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" type="text/javascript">
+</script> <script type="text/javascript">
+document.getElementById("sendemail").addEventListener("click", sendemail, false);
+                function sendemail() {
+                var emailadr = document.getElementById("email");  
+                var umtachedItems = document.getElementById("textarea1");
+                var rawdata = {emailadr:emailadr.value,umtachedItems:umtachedItems.value};
+                google.script.run.sendemail(rawdata);
+                }
+
+
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
